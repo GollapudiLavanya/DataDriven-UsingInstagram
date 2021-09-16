@@ -1,0 +1,35 @@
+﻿/*
+ * project = DataDrivenFrameworkUsingInstagram
+ * Author = Lavanya Gollapudi
+ * Created Date = 15/09/2021
+ */
+
+using NUnit.Framework;
+using OpenQA.Selenium;
+using SeleniumExtras.PageObjects;
+using System;
+
+namespace DataDriven_Instagram.page
+{
+    public class Login_page
+    {
+        public Login_page(IWebDriver driver)
+        {
+            PageFactory.InitElements(driver, this);
+        }
+
+        [FindsBy(How = How.Name, Using = "username")]
+        [CacheLookup]
+        public IWebElement email;
+
+        [FindsBy(How = How.Name, Using = "password")]
+        [CacheLookup]
+        public IWebElement password;
+
+        [FindsBy(How = How.XPath, Using = "//body/div[@id='react-root']/section[1]/main[1]/article[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[3]/button[1]")]
+        [CacheLookup]
+        public IWebElement loginButton;
+
+    }
+}
+
